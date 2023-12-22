@@ -13,12 +13,14 @@ You can write out something for the program to do. Let's start with the classic.
 
 ```Kotlin
 // The action you are taking, is printing out some words.
-// These are comments, by the way. They don't do anything in the program, but are useful when explaining things.
+// These are comments, by the way. They don't do anything in the program,
+// but are useful when explaining things.
 
 print("Hello World!")
 ```
 
-Now, the number of actions you can take are many. We will cover the ones we use, but just remember there are more.
+Now, the number of actions you can take are many. We will cover the ones we use,
+but just remember there are more.
 
 Let's try and take multiple actions
 
@@ -44,7 +46,7 @@ val three = 3 //These should be familiar
 //          A quick aside:
 //                         _ This means equals, easy to get confused with = which means is assigned.
 //                         |     These are the things programmers love.
-// Okay back to conditionals                        V
+//                         V
 val message = if(one + two == three) "It is true" else "It is false"
 
 print(message) // the if statement created a branch, two possible outcomes.
@@ -78,7 +80,7 @@ print(sum)
 ```
 
 Good thing that was just 10, imagine if it was 1,000,00 or even 10!.
-You would have to type it all out without loops, an easy way to do it again?
+That would become too much work, pretty quickly.
 No one wants to spend their time doing that. So Let's use a loop.
 
 ```Kotlin
