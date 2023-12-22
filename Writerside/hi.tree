@@ -3,10 +3,11 @@
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
 
 <instance-profile id="hi"
-                 name="Help Instance"
+                 name="Learn to Program"
                   start-page="Three-Tools.md">
 
     <toc-element topic="Three-Tools.md"/>
     <toc-element topic="Patterns.md"/>
     <toc-element topic="Combining-Patterns.md"/>
+    <toc-element topic="Functions-as-Values.md"/>
 </instance-profile>

@@ -31,8 +31,11 @@ No for something even more arbitrary. Presenting, the box.
     )
     
     // I see, you are unimpressed.
+    // Not how you want to use a box huh?
     
-    data class Container(
+    //Let's try this
+    
+    data class Bax(
         val weight: Int,
         val unitsOfWeight: String,
         val value: Int,
@@ -40,16 +43,14 @@ No for something even more arbitrary. Presenting, the box.
         val insured: Boolean,
     )
     
-    // How about that?
-    // Fine.
+    // Ouch, okay still not the box you are looking for, one more try.
     
-    // Let's talk about POJOs.
-    // Aka, POKOs, POCOs, POROs, POPOs
-    // Let's call thm PO*Os, pronounced Poe-Star-Ohs.
-    // Everyone knows what a a Poestarohs is, right? Right?
-
+    data class Box(
+        var fields: Set<Pair<String, Any>>, // Now you can have any implementation you want.
+    )
 ```
 
+What you might be thinking is that Box, the name, is the problem. It doesn't describe what you need.
 Naming objects what a mess. This is one of two hard problems in Computer Science according to Martin Fowler.
 
 ## Naming Objects
@@ -58,20 +59,18 @@ Naming objects is simple. Call things what they are.
 
 ## Calling things what they are.
 
-This is a tricky one, but let's just say the box is the problem.
+This is a tricky one, but that is because we are trying to name something without knowing what it is.
+We need to change our approach here, instead of starting with a name, let's start with the problem we are trying to solve.
 
-So what to call it is the answer.
-
-Let's start with the problem.
+## Our Problem
 
 How many boxes can my truck carry?
 
-Now, let's write down the limitations.
+Great start, the next step is to think about the limitations we are facing.
 
-I can only carry 1500 pounds.
+The truck can only carry 1500lbs.
 
-So what we need to know about each box is how many we need?
-How much each box weighs.
+So what we need to know about each box is how much it weighs.
 
 ```Kotlin
 
@@ -83,12 +82,9 @@ fun weight(box:Box):Int { // Given a box, the function will tell you what it wei
 }
 ```
 
-So, now you have two ways to use a Box. In a function, and you can just weigh the box yourself with by getting the 
-weight field of the box.
+Let's get some more use out the box. We will need a new problem.
 
-Let's use the box, to show a relationship. We will need a new problem.
-
-Customers get charged by the pound, so I need to know how to spilt the weight between the customers.
+Customers get charged by the pound, how can we spilt the weight between the customers.
 
 ```Kotlin
 
@@ -128,4 +124,4 @@ val delivery = setOf(
 
 ## Conclusion
 
-Objects are powerful ways to define problems. I will leave it to you to answer the hard problems.
+Objects are powerful ways to define problems, because they can act like boxes.

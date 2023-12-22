@@ -51,7 +51,7 @@ print(message) // the if statement created a branch, two possible outcomes.
 ```
 
 Try reading it out loud, "Value Message is assigned, if one plus two equals three, then it is true.
-                         "Else it is false."                       
+                         Else it is false."                       
 
 ```Kotlin
 // Let's do another one.
