@@ -10,4 +10,5 @@
     <toc-element topic="Patterns.md"/>
     <toc-element topic="Combining-Patterns.md"/>
     <toc-element topic="Functions-as-Values.md"/>
+    <toc-element topic="Applying-Functions.md"/>
 </instance-profile>
