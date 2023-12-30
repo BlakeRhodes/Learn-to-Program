@@ -1,11 +1,12 @@
 ---
-shared: true
+share: true
 ---
+
 
 # Applying Functions  
   
-Let's take a closer look at how you can use [[Functions]], and take a peek at some common function patterns.  
-As we go through this, remember that you can use [[Objects]] in function.  
+Let's take a closer look at how you can use [Functions](./Functions.md), and take a peek at some common function patterns.  
+As we go through this, remember that you can use [Objects](./Objects.md) in function.  
   
 ## Collections and Functions  
   
@@ -46,7 +47,7 @@ val intList2 = stringList.newMap(String::toInt)
 ```  
   
 Nice right? Yeah!  
-Now [[Map]] already exists, but so do many other functions that work on [[Collections]].  
+Now [Map](Map.md) already exists, but so do many other functions that work on [Collections](Collections.md).  
 Let's take a closer look at collections and some cool tricks with functions.  
   
 ```Kotlin  
