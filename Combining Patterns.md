@@ -3,6 +3,10 @@ shared: true
 ---
 
 
+<<<<<<< Updated upstream
+
+=======
+>>>>>>> Stashed changes
 # Combining Patterns  
   
 This time we are going to look at a new way to make patterns.  
