@@ -1,9 +1,10 @@
 ---
 share: true
 ---
+
 # Three Tools  
   
-You have three [Tools](./Tools.md) when you are programming. You may import or build more, but for now,  
+You have three  [Tools](./Tools.md) when you are programming. You may import or build more, but for now,  
 let's focus on these three.  
   
 1. Take Action  
