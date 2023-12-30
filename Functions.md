@@ -2,12 +2,6 @@
 share: true
 ---
 
-
-
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 Wikipedia - [Functions](https://en.wikipedia.org/wiki/Function_(computer_programming)#:~:text=In%20computer%20programming%2C%20a%20function,particular%20task%20should%20be%20performed.)
 
  #opinion
