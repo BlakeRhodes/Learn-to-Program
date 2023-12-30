@@ -5,7 +5,7 @@ share: true
 
 # Three Tools  
   
-You have three [Tools](Tools.md) when you are programming. You may import or build more, but for now,  
+You have three [Tools](./Tools.md) when you are programming. You may import or build more, but for now,  
 let's focus on these three.  
   
 1. Take Action  
@@ -119,4 +119,4 @@ If you don't understand the last block of code. Go to the beginning of this sect
   
 Now that you have three tools, we can begin to learn programming.
 
-#next [Patterns](Patterns.md)
+#next [Patterns](./Patterns.md)
