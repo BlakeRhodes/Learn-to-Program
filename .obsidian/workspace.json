@@ -35,8 +35,12 @@
             "id": "3381db51a700ee7a",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Agent.md",
+                "mode": "source",
+                "source": false
+              }
             }
           },
           {
@@ -142,6 +146,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Agent.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -158,6 +163,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Agent.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -179,7 +185,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Agent.md"
+              }
             }
           }
         ]
@@ -203,48 +211,51 @@
   },
   "active": "3381db51a700ee7a",
   "lastOpenFiles": [
-    "Learn-to-Program/Writerside/writerside.cfg",
-    "Learn-to-Program/Writerside/v.list",
+    "README.md",
+    "Agent.md",
+    "2023-12-30.md",
+    "Writerside/writerside.cfg",
+    "Writerside/v.list",
+    "Writerside/topics/Three-Tools.md",
+    "Writerside/topics/Patterns.md",
+    "Writerside/topics/Functions-as-Values.md",
+    "Writerside/topics/Combining-Patterns.md",
+    "Writerside/topics/Applying-Functions.md",
+    "Writerside/topics",
+    "Writerside/redirection-rules.xml",
+    "Writerside/images/new_topic_options_dark.png",
+    "Writerside/images/new_topic_options.png",
+    "Writerside/images/convert_table_to_xml_dark.png",
+    "Writerside/images/completion_procedure_dark.png",
+    "Writerside/images/completion_procedure.png",
+    "Writerside/images/convert_table_to_xml.png",
+    "Writerside/cfg/buildprofiles.xml",
+    "Writerside/images",
+    "Writerside/hi.tree",
+    "Writerside/cfg",
+    "Writerside/c.list",
+    "Writerside",
     "Learn-to-Program/Writerside/topics/Three-Tools.md",
     "Learn-to-Program/Writerside/topics/Patterns.md",
     "Learn-to-Program/Writerside/topics/Functions-as-Values.md",
     "Learn-to-Program/Writerside/topics/Combining-Patterns.md",
     "Learn-to-Program/Writerside/topics/Applying-Functions.md",
-    "Learn-to-Program/Writerside/topics",
-    "Learn-to-Program/Writerside/redirection-rules.xml",
     "Learn-to-Program/Writerside/images/new_topic_options_dark.png",
     "Learn-to-Program/Writerside/images/new_topic_options.png",
     "Learn-to-Program/Writerside/images/convert_table_to_xml_dark.png",
     "Learn-to-Program/Writerside/images/convert_table_to_xml.png",
-    "Learn-to-Program/Writerside/images/completion_procedure_dark.png",
-    "Learn-to-Program/Writerside/images/completion_procedure.png",
-    "Learn-to-Program/Writerside/cfg/buildprofiles.xml",
-    "Learn-to-Program/Writerside/images",
-    "Learn-to-Program/Writerside/hi.tree",
-    "Learn-to-Program/Writerside/cfg",
-    "Learn-to-Program/Writerside/c.list",
-    "Learn-to-Program/Writerside",
     "Learn-to-Program/README.md",
-    "Learn-to-Program",
     "Functions as Values.md",
     "Combining Patterns.md",
     "Patterns.md",
     "Applying Functions.md",
     "Three Tools.md",
-    "README.md",
     "ReAct.md",
     "Python.md",
     "LangChain.md",
-    "Agent.md",
     "LLM.md",
-    "2023-12-30.md",
     "Untitled.canvas",
     "Functions.md",
-    "Agent Types.md",
-    "Prompt Compression.md",
-    "Jiang, Qianhui Wu.md",
-    "Tools.md",
-    "Objects.md",
-    "Welcome.md"
+    "Agent Types.md"
   ]
 }
