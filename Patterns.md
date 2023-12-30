@@ -3,6 +3,10 @@ share: true
 ---
 
 
+<<<<<<< Updated upstream
+
+=======
+>>>>>>> Stashed changes
 # Patterns  
   
 When you are [Programming](Programming.md), you care creating patterns.  
