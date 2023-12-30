@@ -1,6 +1,11 @@
-# [[Functions]] as [[Values]]  
+---
+share: true
+---
+
+
+# [Functions](./Functions.md) as [Values](Values.md)  
   
-We explored how you can use [[Objects]] in Functions. Let's flip that script   
+We explored how you can use [Objects](./Objects.md) in Functions. Let's flip that script   
 and use objects to contain functions.  
   
 We already know we can put values in an Object, why not put some functions in an object?  
@@ -27,10 +32,10 @@ val box2 = Box2(weight, "Alice") {
   
 No, that made it worse. However, we found the problem.  
 
-What is 5.0f? A [[Magic String]]?   
+What is 5.0f? A [Magic String](Magic%20String.md)?   
 No!  
   
-I can hear [[Ryan Brock]] right now.  
+I can hear [Ryan Brock](Ryan%20Brock.md) right now.  
   
 That's easy. What happens when we extract it.  
   
@@ -78,7 +83,7 @@ Shoot, we are not using a function.
 
 Also, this assumes the price is calculated the same every time.  
 
-I bet it will be the same.  I guess let's stay on topic and make it a function [[Third Times a Charm]].
+I bet it will be the same.  I guess let's stay on topic and make it a function [Third Times a Charm](Third%20Times%20a%20Charm.md).
 
   
 ```Kotlin  
@@ -140,4 +145,4 @@ It just happens you can put objects into objects, like you can put functions int
   
 Objects can have Functions as Values.
 
-#next [[Applying Functions]]
+#next [Applying Functions](./Applying%20Functions.md)
