@@ -9,10 +9,10 @@ This time we are going to look at a new way to make patterns.
   
 ## Objects
   
-[Objects](./Objects.md) are [bags of values and variables](bags%20of%20values%20and%20variables.md). They are the beginning of another [Paradigm](Paradigm.md) of language.   
+[Objects](./Objects.md) are [bags of values and variables](bags%20of%20values%20and%20variables.html). They are the beginning of another [Paradigm](Paradigm.html) of language.   
 They are also the beginning of types. We will cover types later.  
   
-Let's take a look at a simple way to make an object, a [Data Class](Data%20Class.md).  
+Let's take a look at a simple way to make an object, a [Data Class](Data%20Class.html).  
   
 ```Kotlin
 data class ThePreasureToCreateExamplesOnTheFly(  
@@ -23,7 +23,7 @@ data class ThePreasureToCreateExamplesOnTheFly(
   
 ```  
   
-I am not sorry about that. I just got done writing some [JPA](JPA.md) and I had to get it out of my system.  
+I am not sorry about that. I just got done writing some [JPA](JPA.html) and I had to get it out of my system.  
   
 Now for something even more arbitrary. Presenting, the box.  
   
@@ -51,7 +51,7 @@ data class Box(
 ```  
   
 What you might be thinking is that Box, the name, is the problem. It doesn't describe what you need.  
-Naming objects what a mess. This is one of two hard problems in Computer Science according to [Martin Fowler](Martin%20Fowler.md).  
+Naming objects what a mess. This is one of two hard problems in Computer Science according to [Martin Fowler](Martin%20Fowler.html).  
   
 ## Naming Objects  
   
@@ -122,4 +122,4 @@ fun totalWeightForOwners(boxes: Set<Box>, owners: Set<String>): Int {
   
 Objects are powerful ways to define problems, because they can act like boxes.
 
-#next [Functions as Values](./Functions%20as%20Values.md)
+#next [Functions as Values](./Functions%20as%20Values.html)

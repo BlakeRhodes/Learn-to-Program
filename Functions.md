@@ -6,4 +6,4 @@ Wikipedia - [Functions](https://en.wikipedia.org/wiki/Function_(computer_program
 
  #opinion
 
-Functions are the ideal way for me to program [MIddleware](MIddleware.md). [Functional Programming](Functional%20Programming.md) is like [Object Oriented Programming](Object%20Oriented%20Programming.md) in that trying to be too pure makes actually writing software too hard. It falls into the trap of [Dogma](Dogma.md).
+Functions are the ideal way for me to program [MIddleware](MIddleware.html). [Functional Programming](Functional%20Programming.html) is like [Object Oriented Programming](Object%20Oriented%20Programming.html) in that trying to be too pure makes actually writing software too hard. It falls into the trap of [Dogma](Dogma.html).

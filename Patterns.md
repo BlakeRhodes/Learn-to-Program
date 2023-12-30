@@ -4,20 +4,20 @@ share: true
 
 # Patterns  
   
-When you are [Programming](Programming.md), you care creating patterns.  
+When you are [Programming](Programming.html), you care creating patterns.  
   
 These patterns are new actions you can take. This is what we are actually doing.   
 Creating new actions. New possibilities.   
   
-Let's talk language. We will use [Kotlin](./Kotlin.md).  
+Let's talk language. We will use [Kotlin](./Kotlin.html).  
   
 People have strong opinions on language. If you would like to use another, I support that.  
-The code examples will be [Idiomatic Kotlin](Idiomatic%20Kotlin.md), but we will talk about patterns. This will keep language decoupled from explanation.  
+The code examples will be [Idiomatic Kotlin](Idiomatic%20Kotlin.html), but we will talk about patterns. This will keep language decoupled from explanation.  
 Back to patterns.  
-## Let's Start with [Functions](./Functions.md)  
+## Let's Start with [Functions](./Functions.html)  
   
 There is an entire paradigm of languages around them. They are a pattern that creates patterns.  
-These are the same thing as functions in [Math](Math.md). This is where knowing math is helpful, we will skip most of the math while pointing it out.  
+These are the same thing as functions in [Math](Math.html). This is where knowing math is helpful, we will skip most of the math while pointing it out.  
   
 ```Kotlin
 // This is called a function signature. It is how to describe the function.  
@@ -47,11 +47,11 @@ fun evenOrOdd(aNumber: Int): String {
 }  
 ```  
   
-Naming functions is important it is like [Prompt Engineering](Prompt%20Engineering.md). Turing words into actions.  
+Naming functions is important it is like [Prompt Engineering](Prompt%20Engineering.html). Turing words into actions.  
   
 ## More Fun With More Functions  
   
-Just like in math, you can make functions that take functions. This is a [Higher Order Function](Higher%20Order%20Function.md) Let's write a function called compose.  
+Just like in math, you can make functions that take functions. This is a [Higher Order Function](Higher%20Order%20Function.html) Let's write a function called compose.  
   
 ```Kotlin  
     // We are going to use lambdas as our functions, they are easy to treat as values.
@@ -76,9 +76,9 @@ Just like in math, you can make functions that take functions. This is a [Higher
   
 This is very powerful, it allows you to reuse patterns. Reusing patterns keeps your code clean.  
   
-You should read [Clean Code](Clean%20Code.md), a great book about programming.  
+You should read [Clean Code](Clean%20Code.html), a great book about programming.  
    
 ## Conclusion  
 Know you what patterns are, and have one called a function. It is great at summarizing how to do things.  The next pattern will help you describe things.
 
-#next [Combining Patterns](Combining%20Patterns.md)
+#next [Combining Patterns](Combining%20Patterns.html)

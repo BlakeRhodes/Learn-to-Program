@@ -83,7 +83,7 @@ print(sum)
   
 Good thing that was just 10, imagine if it was 1,000,00 or even 10!.  
 That would become too much work, pretty quickly.  
-No one wants to spend their time doing that. So Let's use a [Loop](Loop.md).  
+No one wants to spend their time doing that. So Let's use a [Loop](Loop.html).  
   
 ```Kotlin  
     val sum:Int = (1 .. 10).sum()    val bigSum:Int = (1 .. 1000000).sum()    val unrealisticFromAPerformanceStandPointSum:Int = (1 .. 10!).sum() ```  
@@ -118,4 +118,4 @@ If you don't understand the last block of code. Go to the beginning of this sect
   
 Now that you have three tools, we can begin to learn programming.
 
-#next [Patterns](./Patterns.md)
+#next [Patterns](./Patterns.html)
