@@ -2,11 +2,6 @@
 share: true
 ---
 
-
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 # Three Tools  
   
 You have three [Tools](./Tools.md) when you are programming. You may import or build more, but for now,  
