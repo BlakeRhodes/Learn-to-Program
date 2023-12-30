@@ -7,7 +7,7 @@ shared: true
   
 This time we are going to look at a new way to make patterns.  
   
-## [Objects](Objects.md)  
+## [Objects](./Objects.md)  
   
 Objects are [bags of values and variables](bags%20of%20values%20and%20variables.md). They are the beginning of another [Paradigm](Paradigm.md) of language.   
 They are also the beginning of types. We will cover types later.  
@@ -122,4 +122,4 @@ fun totalWeightForOwners(boxes: Set<Box>, owners: Set<String>): Int {
   
 Objects are powerful ways to define problems, because they can act like boxes.
 
-#next [Functions as Values](Functions%20as%20Values.md)
+#next [Functions as Values](./Functions%20as%20Values.md)
