@@ -1,6 +1,7 @@
 ---
 share: true
 ---
+
 # Patterns  
   
 When you are [Programming](Programming.md), you care creating patterns.  
