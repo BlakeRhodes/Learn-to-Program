@@ -4,4 +4,4 @@
 
 #opinion 
 
-The ideas are solid, and they did it first. I would like to take their ideas and translate them to [[Kotlin]]. This is because [[Python]] is just a bit messy for me to read. 
+The ideas are solid, and they did it first. I would like to take their ideas and translate them to [[Kotlin]]. This is because [[Python]] is just a bit messy for me to read. Maybe I will get better at it.

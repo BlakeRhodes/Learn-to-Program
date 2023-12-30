@@ -2,14 +2,13 @@
 shared: true
 ---
 
-
 # Combining Patterns  
   
 This time we are going to look at a new way to make patterns.  
   
-## [Objects](./Objects.md)  
+## Objects
   
-Objects are [bags of values and variables](bags%20of%20values%20and%20variables.md). They are the beginning of another [Paradigm](Paradigm.md) of language.   
+[[Objects]] are [bags of values and variables](bags%20of%20values%20and%20variables.md). They are the beginning of another [Paradigm](Paradigm.md) of language.   
 They are also the beginning of types. We will cover types later.  
   
 Let's take a look at a simple way to make an object, a [Data Class](Data%20Class.md).  

@@ -1,9 +1,13 @@
+---
+shared: true
+---
+
 # Applying Functions  
   
 Let's take a closer look at how you can use [[Functions]], and take a peek at some common function patterns.  
 As we go through this, remember that you can use [[Objects]] in function.  
   
-## [[Collections]] and Functions  
+## Collections and Functions  
   
 Let's write a function that already exists.  
 Why? We want to learn how to program.  
@@ -42,7 +46,7 @@ val intList2 = stringList.newMap(String::toInt)
 ```  
   
 Nice right? Yeah!  
-Now [[Map]] already exists, but so do many other functions that work on collections.  
+Now [[Map]] already exists, but so do many other functions that work on [[Collections]].  
 Let's take a closer look at collections and some cool tricks with functions.  
   
 ```Kotlin  
