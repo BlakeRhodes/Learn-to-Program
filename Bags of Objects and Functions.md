@@ -58,4 +58,4 @@ We'll use this as a guiding framework for the book. It will serve as an editoria
 
 Of course, deviating from the path might be our goal at times.
 
-#next [Sticking to the Rules](./Sticking%20to%20the%20Rules.md)
+#next [Sticking to the Rules](Sticking%20to%20the%20Rules.html)
