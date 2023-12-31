@@ -2,122 +2,104 @@
 share: true
 ---
 
-
 # Applying Functions  
-  
-Let's take a closer look at how you can use [Functions](./Functions.md), and take a peek at some common function patterns.  
-As we go through this, remember that you can use [Objects](./Objects.md) in function.  
-  
-## Collections and Functions  
-  
-Let's write a function that already exists.  
-Why? We want to learn how to program.  
-  
-```Kotlin  
-// Let's write the map function. We will have to give a different name, so let's call it newMap  
-  
-// This is a generic function, so we need placeholders. Usually this is a single letter  
-// but for clarity we are going to use Type as incoming, and NewType as the outgoing.  
-// Of course they could be the same, but doing this way get some more flexiblity  
-  
-fun <Type,NewType> List<Type>.newMap(transform: (Type) -> NewType): List<NewType> {  
-    // Here we create a new list    
-    val result = mutableListOf<NewType>()        
-    
-    // Then we change each item in the original collection to the NewType,  
-    // then adds it to the new list.    
-    this.forEach {
-		result.add(transform(it))
-	}
-	    
-	return result
-}  
-  
-val stringList = listOf("1","2","3")  
-  
-// A quick note, in kotlin you have this nice short cut of being able to use a codeblock like this.  
-val intList = stringList.newMap { it.toInt() }  
-  
-// Other languages you might have to do something like this.  
-  
-val intList2 = stringList.newMap(String::toInt)  
-  
-// Not the worst, but our focus is on reability.  
-  
-```  
-  
-Nice right? Yeah!  
-Now [Map](Map.md) already exists, but so do many other functions that work on [Collections](Collections.md).  
-Let's take a closer look at collections and some cool tricks with functions.  
-  
-```Kotlin  
-// This is a generic class that can hold a value of any given type, "Type", or null.
 
-class Maybe<Type>(val value: Type? = null) { // Maybe this has a value, or maybe it is nul  
-        
-	// Bind will transform the type of the Maybe, to something else.  
-    fun <NewType> bind(function: (Type) -> Maybe<NewType>): Maybe<NewType> {        // This could also just not change the type of the value if function does change its type 
-	    return if (value != null) {            
-		    function(value)
-		} else {            // If they give us a null value, then just return a differently typed null.            
-			Maybe<NewType>() // We don't have to pass anything, because null is the default value        
-		}    
-	}
+In this section, we'll delve deeper into using [Functions](./Functions.md) and explore some common patterns. Remember, functions can seamlessly interact with [Objects](./Objects.md).
+
+## Collections and Functions  
+
+Let's recreate a function that already exists, to deepen our understanding of programming.
+
+```Kotlin  
+// We'll write a version of the map function and call it newMap.
+
+// We use generic types here, labeled as Type and NewType for incoming and outgoing data respectively.
+// This approach provides flexibility.
+
+fun <Type, NewType> List<Type>.newMap(transform: (Type) -> NewType): List<NewType> {  
+    val result = mutableListOf<NewType>() // Creating a new list
+    
+    // Transforming each item in the original list and adding it to the new list
+    this.forEach {
+        result.add(transform(it))
+    }
+    
+    return result.toList() // Return inmutable version
 }  
   
-// This is an extention method that add an easy way to turn any type into a Maybe  
-// Extention methods add a function to all objects of the type it extends.  
-fun <Type> Type.maybe(): Maybe<Type> {  
-    return Maybe(this)}  
-  
-// Let's use our Maybe  
-  
-fun someTimesFails(): String? {  
-    return null // we lied, it always fails and returns null. AHAHAHAAHAHA!}  
-  
-val maybeString = someTimesFails().maybe()  
-  
-// Now we can do things like this  
-maybeString.bind{ (it?.toInt()).maybe() }  
-  
-// Or  
-maybeString.bind{  
-        var number:Int? = it?.toInt()        
-		number = if(number != null) number + 1 else null
-        return number.toString().maybe()    
-}  
-  
+val stringList = listOf("1", "2", "3")  
+
+// Kotlin allows for a shorthand approach using a code block.
+val intList = stringList.newMap { it.toInt() }  
+
+// In other languages, it might look like this:
+val intList2 = stringList.newMap(String::toInt)  
+
+// Our focus here is on readability.
 ```  
+
+Pretty neat, right? The map function already exists, but many other functions also operate on [Collections](Collections.md). Let's explore some of these functions and their interactions with collections.
+
+```Kotlin  
+// The Maybe class can hold a value of any type, "Type", or it can be null.
+
+class Maybe<Type>(val value: Type? = null) { // It may have a value, or it might be null
+        
+    // Bind transforms the Maybe's type to something else.
+    fun <NewType> bind(function: (Type) -> Maybe<NewType>): Maybe<NewType> {
+        // If the value is non-null, apply the function
+        return if (value != null) {
+            function(value)
+        } else {            
+            Maybe<NewType>() // Returns a null of a different type if the original value is null
+        }    
+    }
+}  
   
-And for our next trick . . .  
+// Extension method to convert any type into a Maybe
+fun <Type> Type.maybe(): Maybe<Type> = Maybe(this)  
   
-````Kotlin  
-// Let sort these  
-  
+// Using our Maybe
+fun sometimesFails(): String? = null // This always fails, returning null
+
+val maybeString = sometimesFails().maybe()  
+
+// Now we can chain operations like this
+maybeString.bind { (it?.toInt()).maybe() }  
+
+// Or like this
+maybeString.bind {  
+    var number: Int? = it?.toInt()        
+    number = number?.plus(1)
+    number.toString().maybe()    
+}  
+```  
+
+And now for our next demonstration:
+
+```Kotlin  
+// Sorting a mix of strings and numbers
+
 val strings = listOf("one", "two", "three")  
 val numbers = listOf(4, 5, 6)  
-  
-val ohBoy = listOf(strings, numbers)  
-    val sorted = ohBoy.flatMap {   
-    it.map { it.toString() }  
-}.sorted()  
-  
-  
-//Oh that isn't what you wanted?  
-  
-val easy = listOf(  
+
+val mixedList = listOf(strings, numbers)  
+val sorted = mixedList.flatMap { 
+    it.map { it.toString() }
+}.sorted()
+
+// Not what you expected?
+
+val combined = listOf(
     numbers,
     strings.map(String::toInt)
-)  
-  
-val betterSorted = easy.flatten().sorted()  
-  
-````  
-  
+)
+
+val betterSorted = combined.flatten().sorted()
+```  
+
 ## Conclusion  
-  
-So, functions can make loops using some of that higher order magic.
+
+Functions can effectively replace loops using higher-order functionalities, offering a more expressive and flexible approach to programming.
 
 #next [Bags of Objects and Functions](Bags%20of%20Objects%20and%20Functions.html)
-
-

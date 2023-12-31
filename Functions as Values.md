@@ -2,147 +2,115 @@
 share: true
 ---
 
+# Functions as Values
 
-# [Functions](./Functions.md) as [Values](Values.md)  
-  
-We explored how you can use [Objects](./Objects.md) in Functions. Let's flip that script   
-and use objects to contain functions.  
-  
-We already know we can put values in an Object, why not put some functions in an object?  
-  
-Okay, let's give it a try.  
-  
+Earlier, we explored using objects in functions. Now, let's reverse that concept and use functions within objects.
+
+We know objects can contain values, so why not include functions too?
+
+Let's experiment with this idea.
+
 ```Kotlin  
 data class Box(  
-        val weight: Int,        
-        val owner: String,        
-        val cost: () -> Float,
-)  
-  
-// Let instatiate a Box  
+    val weight: Int,        
+    val owner: String,        
+    val cost: () -> Float,
+)
+
+// Instantiate a Box
 val weight = 5  
-val box = Box(weight, "Alice", {weight * 5.0f })  
-  
-// Refactor for Readability  
-val weight = 5  
-val box2 = Box2(weight, "Alice") {  
+val box = Box(weight, "Alice", { weight * 5.0f })
+
+// Refactor for Better Readability
+val box2 = Box(weight, "Alice") {  
     weight * 5.0f 
 }  
 ```  
-  
-No, that made it worse. However, we found the problem.  
 
-What is 5.0f? A [Magic String](Magic%20String.md)?   
-No!  
-  
-I can hear [Ryan Brock](Ryan%20Brock.md) right now.  
-  
-That's easy. What happens when we extract it.  
-  
-What he is saying, we extract a new object. The price.  
-  
+However, this approach seems to complicate things. But, it helps us identify a problem.
+
+What exactly is 5.0f? A [Magic String](Magic%20String.md), perhaps? 
+
+Let's consider what happens when we extract this value into a separate object, representing the price.
+
 ```Kotlin  
-// I don't really want to use a float, so I am changing it to a Double.  
-// A note on making changes, adding is easy. Removing is hard.  
+// Switching to Double for precision.
 data class Box(  
     val weight: Int,
     val owner: String,        
     val price: Double,        
-	val cost: () -> Double,
-)  
-  
-val weight = 5  
+    val cost: () -> Double,
+)
+
 val price = 10.0  
-val box = Box(weight, "Alice", price, {weight * price })    
+val box = Box(weight, "Alice", price, { weight * price })    
 ```  
-  
-This poor readability will not stand, but this is not just a code smell . . .  
-  
-Kotlin does support what we are doing, but we are doing it wrong. 
 
-What we need to do is make it more readable. 
+But this solution still lacks clarity. Kotlin supports our approach, but we're not utilizing it effectively.
 
-Then our mistake will be clear.  
-  
-We are making a mistake thinking that every box has a different way of calculating the cost.  
-It will be the same for each, so we can add another field.  
-  
+We need to make our code more readable and intuitive.
+
+Initially, we thought each box would have a unique cost calculation. However, it's more likely that the cost formula will be consistent across boxes.
+
 ```Kotlin  
-// No messing around this time. We are going to use a language feature  
-  
+// Utilizing Kotlin's language features more effectively
 data class Box(  
-	val weight: Int,        
-	val owner: String,        
-	val price: Double,
+    val weight: Int,        
+    val owner: String,        
+    val price: Double
 ) {  
     val cost = weight * price
 }  
 ```  
 
-Shoot, we are not using a function.  
+However, this solution doesn't use a function, and it assumes a uniform price calculation.
 
-Also, this assumes the price is calculated the same every time.  
+Let's try incorporating a function for versatility.
 
-I bet it will be the same.  I guess let's stay on topic and make it a function [Third Times a Charm](Third%20Times%20a%20Charm.md).
-
-  
 ```Kotlin  
 data class Box(  
-	val weight: Int,
-	val owner: String,    
-	val price: Double
-} {  
-    fun cost(): Double { return weight * cost }
+    val weight: Int,
+    val owner: String,    
+    val price: Double
+) {  
+    fun cost(): Double = weight * price
 }    
 ```  
-  
-We did it!  
-o.o  
-  
-We were wrong! The BA just put a story on the board that some packages can now have a discount!  
 
-In this kitchen, we expect things to change up.    
-  
-Why? I know they are engineers and I know PIKE-MATCHBOX thanks to Dylan Bettie.   
+Success! But wait, there's a new requirement: some packages may now include discounts.
 
-They have already solved the problem with plain text.  
+Change is a constant in programming, as [Dylan Bettie](Dylan%20Bettie.md) reminds us with the [PIKE-MATCHBOX](PIKE-MATCHBOX.md) principle of programming.
+
+Plain text is a powerful way to add functionality. Image when you get a story like this.
 
 ```Prompt
 Boxes can now have discounts.
 ```
-  
-  
-Of course, they would use AC, Agile, and the right sauce to get us cooking.  
-  
-Yes, Chef!  
-  
+
+Agile methodologies and the right approach help us adapt to these changes.
+
 ```Kotlin  
-  
-// Discount is now an Object!  
-  
-data class Discount( val percentOff: Double, ) {
-    fun totalCost(        
-	    price: Double,        
-	    weight: Int,    
-	): Double {
-		return price * weight * percentOff    
-	}
-}  
+// Introducing a Discount Object
+data class Discount(val percentOff: Double) {
+    fun totalCost(price: Double, weight: Int): Double {
+        return price * weight * (1 - percentOff)
+    }
+}
 
 data class Box(  
     val weight: Int,    
     val owner: String,    
     val price: Double,    
-    val discount: Discount,
+    val discount: Discount
 ) {  
     fun cost() = discount.totalCost(price, weight)
 }
 ```  
-  
-It just happens you can put objects into objects, like you can put functions into functions.  
-  
-## Conclusion  
-  
-Objects can have Functions as Values.
 
-#next [Applying Functions](Applying%20Functions.html)
+Interestingly, objects can contain other objects, just as functions can be nested within functions.
+
+## Conclusion
+
+We've learned that objects can effectively encapsulate functions as values, offering flexibility and adaptability in our programming approach.
+
+#next[Applying Functions](Applying%20Functions.html)

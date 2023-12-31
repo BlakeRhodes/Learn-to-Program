@@ -2,39 +2,35 @@
 share: true
 ---
 
+# Combining Patterns
 
-# Combining Patterns  
-  
-This time we are going to look at a new way to make patterns.  
-  
+In this section, we explore a novel approach to creating patterns.
+
 ## Objects
-  
-[Objects](./Objects.md) are [bags of values and variables](bags%20of%20values%20and%20variables.html). They are the beginning of another [Paradigm](Paradigm.html) of language.   
-They are also the beginning of types. We will cover types later.  
-  
-Let's take a look at a simple way to make an object, a [Data Class](Data%20Class.html).  
-  
+
+[Objects](./Objects.md) are like [bags of values and variables](bags%20of%20values%20and%20variables.html). They mark the beginning of another [Paradigm](Paradigm.html) in programming languages and the onset of [Types](Types.md), which we'll delve into later.
+
+Let's examine a simple object creation method: a [Data Class](Data%20Class.html).
+
 ```Kotlin
-data class ThePreasureToCreateExamplesOnTheFly(  
-    val reallyLikingARealWorldExampleButItIsReallyComplicated: Int, // Because an Int makes sense here. Trust me.    
-    val allOfTheEdgeCasesYouDidNotThinkOfButSomeOneInTheCrowdPointedOUt: List<String>, // I think we can all agree on that.    
-    val numberOfPeopleWhoPolityDisagreed: Set<String>, // Cause I am taking names.    
-    val numberOfTimesYouDidNotUseATrailingCommaLiveAfterPostingAboutItAllTheTime: Int, // Lucky for me this isn't live.)  
-  
+data class ThePressureToCreateExamplesOnTheFly(  
+    val reallyLikingARealWorldExampleButItIsReallyComplicated: Int, // An Int is appropriate here. Trust me.    
+    val allOfTheEdgeCasesYouDidNotThinkOfButSomeoneInTheCrowdPointedOut: List<String>, // A universally relatable scenario.    
+    val numberOfPeopleWhoPolitelyDisagreed: Set<String>, // Yes, I'm keeping track.    
+    val numberOfTimesYouDidNotUseATrailingCommaLiveAfterPostingAboutItAllTheTime: Int, // Thankfully, this isn't a live session;)
 ```  
-  
-I am not sorry about that. I just got done writing some [JPA](JPA.html) and I had to get it out of my system.  
-  
-Now for something even more arbitrary. Presenting, the box.  
-  
+
+No apologies for that example. Just a bit of humor after some [JPA](JPA.html) work.
+
+Now, let's consider something more arbitrary. Introducing the box.
+
 ```Kotlin  
 data class Box(        
-    val contents: Set<Any>, // This is what is inside the box    
+    val contents: Set<Any>, // The contents inside the box    
 )
-// I see, you are unimpressed.  
-// Not how you want to use a box huh?
+// Not impressed? Not exactly how you'd use a box?
 
-//Let's try this  
+// Let's try a different approach:
 data class Box(  
     val weight: Int,
     val unitsOfWeight: String,
@@ -43,83 +39,81 @@ data class Box(
     val insured: Boolean,
 )        
 
-// Ouch, okay still not the box you are looking for, one more try.  
+// Still not quite right? One more attempt:
 
 data class Box(  
-        var fields: Set<Pair<String, Any>>, // Now you can have any implementation you want.    
+    var fields: Set<Pair<String, Any>>, // Flexible implementation with any field you want.    
 )
 ```  
   
-What you might be thinking is that Box, the name, is the problem. It doesn't describe what you need.  
-Naming objects what a mess. This is one of two hard problems in Computer Science according to [Martin Fowler](Martin%20Fowler.html).  
-  
+You might think the issue is with the name 'Box'. It doesn't quite convey what you need. Indeed, naming objects can be one of the two hardest problems in Computer Science, as per [Martin Fowler](Martin%20Fowler.html).
+
 ## Naming Objects  
-  
-Naming objects is simple. Call things what they are.  
-  
-## Calling things what they are.  
-  
-This is a tricky one, but that is because we are trying to name something without knowing what it is.  
-We need to change our approach here, instead of starting with a name, let's start with the problem we are trying to solve.  
-  
-## Our Problem  
-  
-How many boxes can my truck carry?  
-  
-Great start, the next step is to think about the limitations we are facing.  
-  
-The truck can only carry 1500lbs.  
-  
-So what we need to know about each box is how much it weighs.  
-  
+
+The trick to naming objects is simple: call them what they are.
+
+## Identifying the Essence  
+
+Naming can be tricky, mostly because we often try to name something before fully understanding it. A better approach is to start with the problem we're trying to solve.
+
+## Defining Our Problem  
+
+Consider this: How many boxes can my truck carry?
+
+A good starting point. Next, consider the limitations:
+
+The truck has a maximum capacity of 1500 lbs.
+
+Therefore, we need to know the weight of each box.
+
 ```Kotlin   
-data class Box(val weight:Int) // Going with Int, because weight limit is in pounds.  
-  
-//Now that we have an object with an name, we can use it in functions to solve problems.  
-fun weight(box:Box):Int { // Given a box, the function will tell you what it weighs.  
+data class Box(val weight: Int) // Using Int for weight in pounds.
+
+// With a properly named object, we can now use it in functions to solve problems.
+fun weight(box: Box): Int { // Given a box, this function returns its weight.
     return box.weight
 }
 ```  
   
-Let's get some more use out the box. We will need a new problem.  
-  
-Customers get charged by the pound, how can we spilt the weight between the customers.  
-  
+Let's derive more utility from the box. Here's a new problem:
+
+How can we distribute the weight among customers who are charged by the pound?
+
 ```Kotlin
-// We are going to keep track of who owns the box and how much it weighs  
-  
+// This version tracks the box's weight and its owner.
+
 data class Box(  
     val weight: Int,    
     val owner: String,
 )    
 ```  
   
-Now we can do things like this.  
-  
+Now we can execute operations like this:
+
 ```Kotlin  
 val delivery = setOf(  
-	Box(5, "Alice"),
+    Box(5, "Alice"),
     Box(3, "Bob"),        
     Box(4, "Carol"),        
     Box(1, "Dave"),        
     Box(2, "Eve"),    
 )  
-// Find the weight for Alice.    
+// Calculating the total weight for Alice.    
 val totalWeightForAlice = delivery.filter { it.owner == "Alice" }.sumOf { it.weight }        
 
-// Or you could make a function that finds the weight for any user.  
+// Or create a function to calculate the weight for any owner.
 fun totalWeightForOwner(boxes: Set<Box>, owner: String): Int {        
-	return boxes.filter { it.owner == owner }.sumOf { it.weight }
+    return boxes.filter { it.owner == owner }.sumOf { it.weight }
 }       
 
-// Or combine owners.  
+// Or calculate combined weights for multiple owners.
 fun totalWeightForOwners(boxes: Set<Box>, owners: Set<String>): Int {
-	return boxes.filter { it.owner in owners }.sumOf { it.weight }
+    return boxes.filter { it.owner in owners }.sumOf { it.weight }
 }
 ```  
   
 ## Conclusion  
-  
-Objects are powerful ways to define problems, because they can act like boxes.
+
+Objects are a potent tool in defining problems, as they can be tailored to encapsulate various attributes, much like boxes in the real world.
 
 #next [Functions as Values](./Functions%20as%20Values.html)

@@ -3,82 +3,76 @@ share: true
 ---
 
 # Patterns  
-  
-When you are [Programming](Programming.html), you care creating patterns.  
-  
-These patterns are new actions you can take. This is what we are actually doing.   
-Creating new actions. New possibilities.   
-  
-Let's talk language. We will use [Kotlin](./Kotlin.html).  
-  
-People have strong opinions on language. If you would like to use another, I support that.  
-The code examples will be [Idiomatic Kotlin](Idiomatic%20Kotlin.html), but we will talk about patterns. This will keep language decoupled from explanation.  
-Back to patterns.  
-## Let's Start with [Functions](./Functions.html)  
-  
-There is an entire paradigm of languages around them. They are a pattern that creates patterns.  
-These are the same thing as functions in [Math](Math.html). This is where knowing math is helpful, we will skip most of the math while pointing it out.  
-  
+
+When you engage in [Programming](Programming.html), you're essentially crafting patterns.
+
+These patterns represent new actions, new possibilities. It's about creating novel ways to interact with and manipulate data.
+
+Let's delve into language specifics. We'll be using [Kotlin](./Kotlin.html) here.
+
+People often have strong opinions about programming languages. If you prefer another language, that's completely fine. The code examples will be in [Idiomatic Kotlin](Idiomatic%20Kotlin.html), but our focus will be on the underlying patterns. This approach helps keep the language separate from the conceptual explanations. Now, back to patterns.
+
+## Starting with [Functions](./Functions.html)  
+
+Functions are central to an entire paradigm of programming languages. They are a foundational pattern, akin to functions in [Math](Math.html). Understanding math can be beneficial, but we'll mostly sidestep the complex mathematics while highlighting its presence.
+
 ```Kotlin
-// This is called a function signature. It is how to describe the function.  
-// This says functionName is a function that takes an Int named value and returns an Int.  
-fun functionName(value: Int): Int {  
-    // This is the function body. This describes the relationship between value and the result.  
-	val result = value + 1    
-	return result    
+// This is a function signature. It defines the function's structure.
+// It indicates that functionName is a function that takes an Int named 'value' and returns an Int.
+fun functionName(value: Int): Int {
+    // This is the function body. It describes the relationship between 'value' and the result.
+    val result = value + 1    
+    return result    
 }  
 ```  
-  
-Let's take a look at another one.  
-  
+
+Let's examine another example.
+
 ```Kotlin  
-// Let's start with a natural language description of this function.  
-// When given an Int, return a string indicating if the Int was even or odd.  
-  
-fun evenOrOdd(aNumber: Int): String {  
-    // Let's start by figuring out if it is congruent to 2.    
-    val result = if(number % 2 == 0) {
-        return "even" // If it is congruent, then it is even.
+// First, a natural language description of this function:
+// Given an Int, return a string indicating whether the Int is even or odd.
+
+fun evenOrOdd(aNumber: Int): String {
+    // We begin by determining if the number is divisible by 2.
+    val result = if (aNumber % 2 == 0) {
+        "even" // If divisible, then it's even.
     } else {
-        return "odd" // If it ain't even, its odd.
-    }   
+        "odd" // Otherwise, it's odd.
+    }
     
     return result
 }  
 ```  
-  
-Naming functions is important it is like [Prompt Engineering](Prompt%20Engineering.html). Turing words into actions.  
-  
-## More Fun With More Functions  
-  
-Just like in math, you can make functions that take functions. This is a [Higher Order Function](Higher%20Order%20Function.html) Let's write a function called compose.  
-  
+
+Naming functions is as crucial as [Prompt Engineering](Prompt%20Engineering.html). It's about transforming words into actions.
+
+## More Fun With Functions  
+
+Like in math, you can create functions that accept other functions. This concept is known as a [Higher Order Function](Higher%20Order%20Function.html). Let's write a function named 'compose'.
+
 ```Kotlin  
-    // We are going to use lambdas as our functions, they are easy to treat as values.
-    // Taking advantage of typealias to save some typing    
-    // This means, when I say StringTransformer I want a function that takes a String and returns a new one.   
-     typealias StringTransform = (String) -> String  
-     
-    // Here we have a function that takes a string and adds ", maybe" to the end    
-    val maybe:StringTransform = { "$it, maybe" } // $it in this case is the original string.    
-    // So maybe("It worked") would give you "It worked, maybe"        
+    // We'll use lambdas for our functions, treating them as values.
+    // 'StringTransform' is a typealias for a function taking a String and returning a String.   
+    typealias StringTransform = (String) -> String  
     
-    // Here we have a simular function  
-    val probably:StringTransform = { "$it, probably" }        
+    // A function that appends ", maybe" to a string
+    val maybe: StringTransform = { "$it, maybe" }
     
-    // Now this is a higher order function, a function that takes functions  
-    // and in this case also returns a function.        
-    val compose : (StringTransform, StringTransform)->StringTransform ={  
-        a,b -> {a(b(it))} // This is (a of b )(it)    
-    }        
-    // Now, we can compose StringTransformers, maybe, probably  
-    val maybeProbably = compose(maybe, probably)```  
-  
-This is very powerful, it allows you to reuse patterns. Reusing patterns keeps your code clean.  
-  
-You should read [Clean Code](Clean%20Code.html), a great book about programming.  
-   
+    // Similarly, a function that appends ", probably"
+    val probably: StringTransform = { "$it, probably" }        
+    
+    // Now, a higher order function that takes functions and returns a function.
+    val compose: (StringTransform, StringTransform) -> StringTransform = { a, b -> { a(b(it)) } }
+    
+    // Composing 'maybe' and 'probably'
+    val maybeProbably = compose(maybe, probably)
+```  
+
+This technique is immensely powerful, allowing you to reuse and combine patterns, thereby keeping your code clean and efficient.
+
+I recommend reading [Clean Code](Clean%20Code.html), a seminal book on programming best practices.
+
 ## Conclusion  
-Know you what patterns are, and have one called a function. It is great at summarizing how to do things.  The next pattern will help you describe things.
+Now you understand what patterns are and have been introduced to a fundamental one: functions. They are excellent for encapsulating processes. Next, we'll explore how to combine these patterns effectively.
 
 #next [Combining Patterns](Combining%20Patterns.html)
