@@ -12,7 +12,7 @@ However, it's crucial to adhere to [SOLID](SOLID.md) principles, especially sinc
 
 Understanding the application of our library is the first step. Consider that our library helps a peer programmer (the user) accomplish task X by providing solution Y.
 
-To solve for X, we need to understand the user's needs. Since we are essentially the user, we can start by creating libraries for our purposes. For instance, I aim to develop a user-friendly agent leveraging [Spring AI](Spring%20AI.md) and will write it in [Kotlin](Kotlin.html), the chosen language.
+To solve for X, we need to understand the user's needs. Since we are essentially the user, we can start by creating libraries for our purposes. For instance, I aim to develop a user-friendly agent leveraging [Spring AI](./Spring%20AI.md) and will write it in [Kotlin](Kotlin.html), the chosen language.
 
 Knowing X helps: I want to create agents for use in applications.
 
@@ -32,7 +32,7 @@ Example: [Create Best Practice Checklist](./Create%20Best%20Practice%20Checklist
 
 Now, let's use this output to formulate a final checklist.
 
-### Universal Library Development Checklist
+### [Universal Library Development Checklist](./Universal%20Library%20Development%20Checklist.md)
 
 1. **Adhere to Language-Specific Coding Conventions**: Follow the established [Coding Standards](Coding%20Standards.md) of the language you're using.
 2. **Effective Use of Language Features**: Capitalize on the unique features of your programming language.
