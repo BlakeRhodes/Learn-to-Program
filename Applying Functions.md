@@ -118,3 +118,6 @@ val betterSorted = easy.flatten().sorted()
   
 So, functions can make loops using some of that higher order magic.
 
+#next [Bags of Objects and Functions](Bags%20of%20Objects%20and%20Functions.html)
+
+
