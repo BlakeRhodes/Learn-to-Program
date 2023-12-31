@@ -145,4 +145,4 @@ It just happens you can put objects into objects, like you can put functions int
   
 Objects can have Functions as Values.
 
-#next [Applying Functions](./Applying%20Functions.md)
+#next [Applying Functions](Applying%20Functions.html)
