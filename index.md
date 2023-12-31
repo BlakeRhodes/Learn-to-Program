@@ -26,7 +26,7 @@ I've tagged various topics as they appear, though they may not yet be fully deve
 
 ## Table of Contents
 
-## Basics
+## [Basics](Basics.html)
 
 1. [Three Tools](Three%20Tools.html)
 2. [Patterns](Patterns.html)
@@ -35,7 +35,7 @@ I've tagged various topics as they appear, though they may not yet be fully deve
 5. [Applying Functions](Applying%20Functions.html)
 6. [Bags of Objects and Functions](Bags%20of%20Objects%20and%20Functions.html)
 
-## Libraries
+## [Libraries](Libraries.html)
 
 1. [Sticking to the Rules](./Sticking%20to%20the%20Rules.md)
 2. 
