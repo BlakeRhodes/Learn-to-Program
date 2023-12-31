@@ -12,7 +12,7 @@ However, it's crucial to adhere to [SOLID](SOLID.md) principles, especially sinc
 
 Understanding the application of our library is the first step. Consider that our library helps a peer programmer (the user) accomplish task X by providing solution Y.
 
-To solve for X, we need to understand the user's needs. Since we are essentially the user, we can start by creating libraries for our purposes. For instance, I aim to develop a user-friendly agent leveraging [Spring AI](./Spring%20AI.md) and will write it in [Kotlin](Kotlin.html), the chosen language.
+To solve for X, we need to understand the user's needs. Since we are essentially the user, we can start by creating libraries for our purposes. For instance, I aim to develop a user-friendly agent leveraging [Spring AI](Spring%20AI.md) and will write it in [Kotlin](Kotlin.html), the chosen language.
 
 Knowing X helps: I want to create agents for use in applications.
 
@@ -59,4 +59,3 @@ We'll use this as a guiding framework for the book. It will serve as an editoria
 Of course, deviating from the path might be our goal at times.
 
 #next [Sticking to the Rules](./Sticking%20to%20the%20Rules.md)
-
