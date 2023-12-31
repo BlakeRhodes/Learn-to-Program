@@ -75,4 +75,4 @@ I recommend reading [Clean Code](Clean%20Code.html), a seminal book on programmi
 ## Conclusion  
 Now you understand what patterns are and have been introduced to a fundamental one: functions. They are excellent for encapsulating processes. Next, we'll explore how to combine these patterns effectively.
 
-#next [Combining Patterns](Combining%20Patterns.html)
+#next[Combining Patterns](Combining%20Patterns.html)
